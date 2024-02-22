@@ -1,5 +1,5 @@
 params (
-    [string[]]$ResourceGroups
+    [string[]]$resourcegroups
 )
 
 function  AutoVMStart {
@@ -13,6 +13,6 @@ function  AutoVMStart {
 }
 
 Connect-Az -Identity
-foreach ($rg in $ResourceGroups) {
+foreach ($rg in $resourcegroups) {
     AutoVMStart -ResourceGroupName $rg
 }
