@@ -1,6 +1,6 @@
 param (
     [string[]]$resourceGroups,
-    [string]$subscriptionId
+    [string]$subscriptionid
 )
 
 function AutoVMStart {
@@ -20,7 +20,7 @@ function AutoVMStart {
 Connect-AzAccount -Identity
 
 # Set the subscription context
-Set-AzContext -SubscriptionId $subscriptionId
+Set-AzContext -SubscriptionId $subscriptionid
 
 foreach ($rg in $resourceGroups) {
     AutoVMStart -ResourceGroupName $rg
