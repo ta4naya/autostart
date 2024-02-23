@@ -16,8 +16,7 @@ function AutoVMStart {
     }
 }
 
-# Assuming Managed Identity for Azure authentication
-Connect-AzAccount -Identity
+
 
 # Set the subscription context
 Set-AzContext -SubscriptionId $subscriptionid
