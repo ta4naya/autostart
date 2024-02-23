@@ -1,5 +1,6 @@
 param (
-    [string[]]$resourceGroups
+    [string[]]$resourceGroups,
+    [string]$subscriptionId
 )
 
 function AutoVMStart {
@@ -18,6 +19,10 @@ function AutoVMStart {
 # Assuming Managed Identity for Azure authentication
 Connect-AzAccount -Identity
 
+# Set the subscription context
+Set-AzContext -SubscriptionId $subscriptionId
+
 foreach ($rg in $resourceGroups) {
     AutoVMStart -ResourceGroupName $rg
 }
+
